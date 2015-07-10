@@ -8,6 +8,7 @@ module Html.Events
     , onMouseOver, onMouseOut
     , on
     , targetValue, targetChecked, keyCode
+    , onInput
     ) where
 {-|
 It is often helpful to create an [Union Type][] so you can have many different kinds
@@ -149,3 +150,11 @@ onFocus =
 onSubmit : Signal.Address a -> a -> Attribute
 onSubmit =
     messageOn "submit"
+    
+    
+    
+-- Change event for <input>s and <textarea>s
+
+onInput : Signal.Address a -> a -> Attribute
+onInput =
+    messageOn "input"
